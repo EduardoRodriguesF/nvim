@@ -8,4 +8,6 @@ return packer.startup(function(use)
   
   use { "nvim-telescope/telescope.nvim", tag = '0.1.x' }
   use "kyazdani42/nvim-tree.lua"
+
+  use "getomni/neovim"
 end)

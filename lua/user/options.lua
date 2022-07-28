@@ -8,9 +8,11 @@ local options = {
   relativenumber = true,
   scrolloff = 8,
   sidescrolloff = 8,
-  updatetime = 300
+  updatetime = 300,
 }
 
 for key, value in pairs(options) do
   vim.opt[key] = value
 end
+
+vim.cmd[[colorscheme omni]]
