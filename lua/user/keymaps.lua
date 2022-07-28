@@ -32,6 +32,10 @@ keymap("n", "fg", ":Telescope live_grep<cr>", opts)
 keymap("n", "fb", ":Telescope buffers<cr>", opts)
 keymap("n", "fh", ":Telescope help_tags<cr>", opts)
 
+-- Nvim Tree plugin
+keymap("n", "<c-n>", ":NvimTreeToggle<cr>", opts)
+keymap("n", "<leader>n", ":NvimTreeFocus<cr>", opts)
+
 -- Insert --
 -- Quickly exit mode
 keymap("i", "jk", "<esc>", opts)
