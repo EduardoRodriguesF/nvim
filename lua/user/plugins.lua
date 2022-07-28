@@ -6,4 +6,5 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim"
   
   use { "nvim-telescope/telescope.nvim", tag = '0.1.x' }
+  use "kyazdani42/nvim-tree.lua"
 end)
