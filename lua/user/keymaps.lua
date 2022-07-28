@@ -26,6 +26,12 @@ keymap("n", "<c-right>", ":vertical resize +2<cr>", opts)
 keymap("n", "<s-h>", ":bprevious<cr>", opts)
 keymap("n", "<s-l>", ":bnext<cr>", opts)
 
+-- Telescope plugin
+keymap("n", "ff", ":Telescope find_files<cr>", opts)
+keymap("n", "fg", ":Telescope live_grep<cr>", opts)
+keymap("n", "fb", ":Telescope buffers<cr>", opts)
+keymap("n", "fh", ":Telescope help_tags<cr>", opts)
+
 -- Insert --
 -- Quickly exit mode
 keymap("i", "jk", "<esc>", opts)
