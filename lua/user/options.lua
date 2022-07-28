@@ -9,6 +9,8 @@ local options = {
   scrolloff = 8,
   sidescrolloff = 8,
   updatetime = 300,
+  foldmethod = "expr",
+  foldexpr = "nvim_treesitter#foldexpr()"
 }
 
 for key, value in pairs(options) do
