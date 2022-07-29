@@ -11,6 +11,7 @@ local options = {
   updatetime = 300,
   foldmethod = "expr",
   foldexpr = "nvim_treesitter#foldexpr()",
+  foldenable = false,
   cursorline = true,
   wrap = false
 }
