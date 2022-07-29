@@ -5,6 +5,8 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim"
   use "nvim-lua/popup.nvim"
   use "kyazdani42/nvim-web-devicons"
+
+  use "gpanders/editorconfig.nvim"
   
   use "nvim-treesitter/nvim-treesitter"
   use 'williamboman/nvim-lsp-installer'
