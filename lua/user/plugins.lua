@@ -5,6 +5,7 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim"
   use "nvim-lua/popup.nvim"
   use "kyazdani42/nvim-web-devicons"
+  use "L3MON4D3/LuaSnip"
 
   use "gpanders/editorconfig.nvim"
   use "windwp/nvim-autopairs"
