@@ -10,6 +10,7 @@ return packer.startup(function(use)
   use "gpanders/editorconfig.nvim"
   use "windwp/nvim-autopairs"
   use "lukas-reineke/indent-blankline.nvim"
+  use "lewis6991/gitsigns.nvim"
   
   use "nvim-treesitter/nvim-treesitter"
   use 'williamboman/nvim-lsp-installer'

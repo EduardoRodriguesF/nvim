@@ -16,6 +16,7 @@ require("nvim-treesitter.configs").setup({
 
 require("nvim-tree").setup()
 require("nvim-autopairs").setup()
+require("gitsigns").setup()
 
 require("indent_blankline").setup({
   show_current_context = true,
