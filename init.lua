@@ -15,6 +15,7 @@ require("nvim-treesitter.configs").setup({
 })
 
 require("nvim-tree").setup()
+require("nvim-autopairs").setup()
 
 require("lualine").setup({
   options = {

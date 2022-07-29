@@ -7,6 +7,7 @@ return packer.startup(function(use)
   use "kyazdani42/nvim-web-devicons"
 
   use "gpanders/editorconfig.nvim"
+  use "windwp/nvim-autopairs"
   
   use "nvim-treesitter/nvim-treesitter"
   use 'williamboman/nvim-lsp-installer'
