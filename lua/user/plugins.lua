@@ -14,6 +14,7 @@ return packer.startup(function(use)
   
   use "nvim-treesitter/nvim-treesitter"
   use 'williamboman/nvim-lsp-installer'
+  use "jose-elias-alvarez/null-ls.nvim"
 
   use 'neovim/nvim-lspconfig'
   use 'hrsh7th/cmp-nvim-lsp'
