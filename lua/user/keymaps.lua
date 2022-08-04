@@ -36,6 +36,20 @@ keymap("n", "fh", ":Telescope help_tags<cr>", opts)
 keymap("n", "<c-n>", ":NvimTreeToggle<cr>", opts)
 keymap("n", "<leader>n", ":NvimTreeFocus<cr>", opts)
 
+-- LSP
+keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
+keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
+keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
+keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
+keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
+keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>', opts)
+keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<cr>', opts)
+keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
+keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
+keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
+keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<cr>', opts)
+
 -- Insert --
 -- Quickly exit mode
 keymap("i", "jk", "<esc>", opts)
