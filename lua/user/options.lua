@@ -13,7 +13,8 @@ local options = {
   foldexpr = "nvim_treesitter#foldexpr()",
   foldenable = false,
   cursorline = true,
-  wrap = false
+  wrap = false,
+  wildignore = "*.o,*.a,*.so,*.pyc,*.swp,.git,.git/*,*.class,*/target/*,.idea/*,.vscode/*,node_modules,node_modules/*"
 }
 
 for key, value in pairs(options) do
