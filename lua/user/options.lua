@@ -10,6 +10,7 @@ local options = {
   sidescrolloff = 8,
   updatetime = 300,
   fixendofline = false,
+  endofline = false,
   foldmethod = "expr",
   foldexpr = "nvim_treesitter#foldexpr()",
   foldenable = false,
