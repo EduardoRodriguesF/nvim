@@ -18,6 +18,12 @@ require("nvim-tree").setup()
 require("nvim-autopairs").setup()
 require("gitsigns").setup()
 
+require('telescope').setup({
+  defaults = { 
+    file_ignore_patterns = {"node_modules"} 
+  } 
+})
+
 require("indent_blankline").setup({
   show_current_context = true,
   show_current_context_start = false
