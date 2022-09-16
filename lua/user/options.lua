@@ -9,8 +9,7 @@ local options = {
   scrolloff = 8,
   sidescrolloff = 8,
   updatetime = 300,
-  fixendofline = false,
-  endofline = false,
+  fixendofline = true,
   foldmethod = "expr",
   foldexpr = "nvim_treesitter#foldexpr()",
   foldenable = false,
@@ -24,3 +23,4 @@ for key, value in pairs(options) do
 end
 
 vim.cmd[[colorscheme omni]]
+vim.cmd[[autocmd BufEnter * set fixendofline]]
