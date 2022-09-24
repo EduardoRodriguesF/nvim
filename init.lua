@@ -19,9 +19,9 @@ require("nvim-autopairs").setup()
 require("gitsigns").setup()
 
 require('telescope').setup({
-  defaults = { 
-    file_ignore_patterns = {"node_modules"} 
-  } 
+  defaults = {
+    file_ignore_patterns = {"node_modules"}
+  }
 })
 
 require("indent_blankline").setup({

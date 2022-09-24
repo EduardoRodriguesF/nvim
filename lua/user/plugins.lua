@@ -11,7 +11,7 @@ return packer.startup(function(use)
   use "windwp/nvim-autopairs"
   use "lukas-reineke/indent-blankline.nvim"
   use "lewis6991/gitsigns.nvim"
-  
+
   use "nvim-treesitter/nvim-treesitter"
   use 'williamboman/nvim-lsp-installer'
   use "jose-elias-alvarez/null-ls.nvim"
