@@ -2,8 +2,6 @@ require "user.plugins"
 require "user.options"
 require "user.keymaps"
 
-local home = os.getenv("HOME")
-
 require("nvim-treesitter.configs").setup({
   ensure_installed = { "lua", "javascript" },
   sync_install = false,
@@ -46,21 +44,20 @@ null_ls.setup({
 })
 
 local lsp_installer = require("nvim-lsp-installer")
-lsp_installer.on_server_ready(function(server)
-  local opts = {}
-  server:setup(opts)
-end)
+lsp_installer.setup({
+  automatic_installation = true,
+})
 
-local pid = vim.fn.getpid()
-local omnisharp_bin = "/home/edurf/.local/share/nvim/lsp_servers/omnisharp/omnisharp/OmniSharp.dll"
+local omnisharp_bin = "/home/edurf/.local/share/nvim/lsp_servers/omnisharp/omnisharp/OmniSharp"
 local root_pattern = require('lspconfig.util').root_pattern
 
 require'lspconfig'.omnisharp.setup{
-  cmd = { "dotnet", omnisharp_bin, "--languageserver", "--hostPID", tostring(pid) },
+  cmd = { "dotnet", omnisharp_bin },
   root_dir= function(path)
     return root_pattern('*.sln')(path) or root_pattern('*.csproj')(path)
   end
 }
+
 local cmp = require('cmp')
 
 cmp.setup({
