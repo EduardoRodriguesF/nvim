@@ -25,6 +25,7 @@ return packer.startup(function(use)
   use 'saadparwaiz1/cmp_luasnip'
 
   use { "nvim-telescope/telescope.nvim", tag = '0.1.x' }
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use "kyazdani42/nvim-tree.lua"
   use "nvim-lualine/lualine.nvim"
 
