@@ -44,8 +44,17 @@ null_ls.setup({
 })
 
 local lsp_installer = require("nvim-lsp-installer")
-lsp_installer.setup({
-  automatic_installation = true,
+lsp_installer.on_server_ready(function(server)
+  local opts = {}
+  server:setup(opts)
+end)
+
+local null_ls = require("null-ls")
+null_ls.setup({
+  sources = {
+    null_ls.builtins.diagnostics.eslint,
+    null_ls.builtins.formatting.prettier
+  }
 })
 
 local omnisharp_bin = "/home/edurf/.local/share/nvim/lsp_servers/omnisharp/omnisharp/OmniSharp"
