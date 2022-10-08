@@ -18,6 +18,8 @@ require("nvim-tree").setup()
 require("nvim-autopairs").setup()
 require("gitsigns").setup()
 
+require('trouble').setup()
+
 require('telescope').setup({
   defaults = {
     file_ignore_patterns = {"node_modules"}
