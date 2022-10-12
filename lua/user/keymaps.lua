@@ -96,6 +96,7 @@ keymap('n', '<leader>gR', '<Cmd>TroubleToggle lsp_references<CR>', opts)
 -- Insert --
 -- Quickly exit mode
 keymap("i", "jk", "<esc>", opts)
+keymap("i", "kj", "<esc>", opts)
 
 -- Visual --
 -- Stay in indent mode
