@@ -37,14 +37,6 @@ require("lualine").setup({
   }
 })
 
-local null_ls = require("null-ls")
-null_ls.setup({
-  sources = {
-    null_ls.builtins.diagnostics.eslint,
-    null_ls.builtins.formatting.prettier
-  }
-})
-
 local lsp_installer = require("nvim-lsp-installer")
 lsp_installer.on_server_ready(function(server)
   local opts = {}
