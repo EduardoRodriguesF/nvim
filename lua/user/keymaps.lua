@@ -23,8 +23,8 @@ keymap("n", "<c-left>", ":vertical resize -2<cr>", opts)
 keymap("n", "<c-right>", ":vertical resize +2<cr>", opts)
 
 -- Navigate buffers
-keymap("n", "<s-l>", ":bprevious<cr>", opts)
-keymap("n", "<s-h>", ":bnext<cr>", opts)
+keymap("n", "<s-n>", ":bprevious<cr>", opts)
+keymap("n", "<s-l>", ":bnext<cr>", opts)
 
 -- Telescope plugin
 keymap("n", "ff", ":Telescope find_files<cr>", opts)
