@@ -18,6 +18,8 @@ require("nvim-tree").setup()
 require("nvim-autopairs").setup()
 require("gitsigns").setup()
 
+require('trouble').setup()
+
 require('telescope').setup({
   defaults = {
     file_ignore_patterns = {"node_modules"}
@@ -32,14 +34,6 @@ require("indent_blankline").setup({
 require("lualine").setup({
   options = {
     theme = 'omni'
-  }
-})
-
-local null_ls = require("null-ls")
-null_ls.setup({
-  sources = {
-    null_ls.builtins.diagnostics.eslint,
-    null_ls.builtins.formatting.prettier
   }
 })
 

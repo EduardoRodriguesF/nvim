@@ -85,9 +85,18 @@ keymap('n', '<Space>bd', '<Cmd>BufferOrderByDirectory<CR>', opts)
 keymap('n', '<Space>bl', '<Cmd>BufferOrderByLanguage<CR>', opts)
 keymap('n', '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
 
+-- Trouble
+keymap('n', '<leader>xx', '<Cmd>TroubleToggle<CR>', opts)
+keymap('n', '<leader>xw', '<Cmd>TroubleToggle workspace_diagnostics<CR>', opts)
+keymap('n', '<leader>xd', '<Cmd>TroubleToggle document_diagnostics<CR>', opts)
+keymap('n', '<leader>xl', '<Cmd>TroubleToggle loclist<CR>', opts)
+keymap('n', '<leader>xq', '<Cmd>TroubleToggle quickfix<CR>', opts)
+keymap('n', '<leader>gR', '<Cmd>TroubleToggle lsp_references<CR>', opts)
+
 -- Insert --
 -- Quickly exit mode
 keymap("i", "jk", "<esc>", opts)
+keymap("i", "kj", "<esc>", opts)
 
 -- Visual --
 -- Stay in indent mode
