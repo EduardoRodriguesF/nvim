@@ -22,10 +22,6 @@ keymap("n", "<c-down>", ":resize +2<cr>", opts)
 keymap("n", "<c-left>", ":vertical resize -2<cr>", opts)
 keymap("n", "<c-right>", ":vertical resize +2<cr>", opts)
 
--- Navigate buffers
-keymap("n", "<s-h>", ":bprevious<cr>", opts)
-keymap("n", "<s-l>", ":bnext<cr>", opts)
-
 -- Telescope plugin
 keymap("n", "ff", ":Telescope find_files<cr>", opts)
 keymap("n", "fg", ":Telescope live_grep<cr>", opts)
@@ -51,6 +47,9 @@ keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
 keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<cr>', opts)
 
 -- Barbar
+-- Move to previous/next
+keymap('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts)
+keymap('n', '<A-.>', '<Cmd>BufferNext<CR>', opts)
 -- Re-order to previous/next
 keymap('n', '<A-<>', '<Cmd>BufferMovePrevious<CR>', opts)
 keymap('n', '<A->>', '<Cmd>BufferMoveNext<CR>', opts)
