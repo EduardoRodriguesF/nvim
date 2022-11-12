@@ -44,7 +44,7 @@ keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
 keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
 keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
 keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
-keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<cr>', opts)
+keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.format { async = true }<cr>', opts)
 
 -- Barbar
 -- Move to previous/next
