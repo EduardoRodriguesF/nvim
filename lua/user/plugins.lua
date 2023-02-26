@@ -13,7 +13,7 @@ return packer.startup(function(use)
   use "lewis6991/gitsigns.nvim"
 
   use "nvim-treesitter/nvim-treesitter"
-  use 'williamboman/nvim-lsp-installer'
+  use 'williamboman/mason.nvim'
   use "jose-elias-alvarez/null-ls.nvim"
   use 'ron-rs/ron.vim'
 
