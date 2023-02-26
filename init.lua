@@ -2,6 +2,9 @@ require "user.plugins"
 require "user.options"
 require "user.keymaps"
 
+-- Hopefully temporary
+require "user.treesitter.migration"
+
 require("nvim-treesitter.configs").setup({
   ensure_installed = { "lua", "javascript" },
   sync_install = false,
