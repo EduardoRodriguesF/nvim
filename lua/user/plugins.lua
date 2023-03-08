@@ -3,6 +3,7 @@ local packer = require('packer')
 return packer.startup(function(use)
   use "wbthomason/packer.nvim"
   use "nvim-lua/plenary.nvim"
+  use 'mfussenegger/nvim-dap'
   use "nvim-lua/popup.nvim"
   use "kyazdani42/nvim-web-devicons"
   use "L3MON4D3/LuaSnip"
