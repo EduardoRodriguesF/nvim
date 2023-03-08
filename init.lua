@@ -25,7 +25,7 @@ require('trouble').setup()
 
 require('telescope').setup({
   defaults = {
-    file_ignore_patterns = {"node_modules"}
+    file_ignore_patterns = { "node_modules" }
   }
 })
 
@@ -41,30 +41,30 @@ require("lualine").setup({
 })
 
 require("mason").setup({
-    ui = {
-        icons = {
-            package_installed = "✓",
-            package_pending = "➜",
-            package_uninstalled = "✗"
-        }
+  ui = {
+    icons = {
+      package_installed = "✓",
+      package_pending = "➜",
+      package_uninstalled = "✗"
     }
+  }
 })
 require("mason-lspconfig").setup({
   automatic_installation = true,
 })
 
 require("mason-lspconfig").setup_handlers {
-    -- The first entry (without a key) will be the default handler
-    -- and will be called for each installed server that doesn't have
-    -- a dedicated handler.
-    function (server_name) -- default handler (optional)
-        require("lspconfig")[server_name].setup {}
-    end,
-    -- Next, you can provide a dedicated handler for specific servers.
-    -- For example, a handler override for the `rust_analyzer`:
-    ["rust_analyzer"] = function ()
-        require("rust-tools").setup {}
-    end
+  -- The first entry (without a key) will be the default handler
+  -- and will be called for each installed server that doesn't have
+  -- a dedicated handler.
+  function(server_name) -- default handler (optional)
+    require("lspconfig")[server_name].setup {}
+  end,
+  -- Next, you can provide a dedicated handler for specific servers.
+  -- For example, a handler override for the `rust_analyzer`:
+  ["rust_analyzer"] = function()
+    require("rust-tools").setup {}
+  end
 }
 
 local null_ls = require("null-ls")
@@ -78,9 +78,9 @@ null_ls.setup({
 local omnisharp_bin = "/home/edurf/.local/share/nvim/lsp_servers/omnisharp/omnisharp/OmniSharp"
 local root_pattern = require('lspconfig.util').root_pattern
 
-require'lspconfig'.omnisharp.setup{
+require 'lspconfig'.omnisharp.setup {
   cmd = { "dotnet", omnisharp_bin },
-  root_dir= function(path)
+  root_dir = function(path)
     return root_pattern('*.sln')(path) or root_pattern('*.csproj')(path)
   end
 }
@@ -94,7 +94,7 @@ cmp.setup({
     end
   },
   mapping = cmp.mapping.preset.insert({
-    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-b>'] = cmp.mapping.scroll_docs( -4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.abort(),
@@ -103,8 +103,8 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
   }, {
-      { name = 'buffer' },
-    })
+    { name = 'buffer' },
+  })
 })
 
 -- Set configuration for specific filetype.
@@ -112,8 +112,8 @@ cmp.setup.filetype('gitcommit', {
   sources = cmp.config.sources({
     { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
   }, {
-      { name = 'buffer' },
-    })
+    { name = 'buffer' },
+  })
 })
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
@@ -130,12 +130,12 @@ cmp.setup.cmdline(':', {
   sources = cmp.config.sources({
     { name = 'path' }
   }, {
-      { name = 'cmdline' }
-    })
+    { name = 'cmdline' }
+  })
 })
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-    vim.lsp.diagnostic.on_publish_diagnostics, {
-        virtual_text = false
-    }
+  vim.lsp.diagnostic.on_publish_diagnostics, {
+  virtual_text = false
+}
 )
