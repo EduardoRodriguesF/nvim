@@ -27,9 +27,6 @@ return packer.startup(function(use)
   use 'hrsh7th/nvim-cmp'
   use 'saadparwaiz1/cmp_luasnip'
 
-  -- Rust
-  use 'simrat39/rust-tools.nvim'
-
   use { "nvim-telescope/telescope.nvim", tag = '0.1.x' }
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use "kyazdani42/nvim-tree.lua"
