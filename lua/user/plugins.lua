@@ -32,7 +32,6 @@ return packer.startup(function(use)
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use "kyazdani42/nvim-tree.lua"
   use "nvim-lualine/lualine.nvim"
-  use "romgrk/barbar.nvim"
   use "folke/trouble.nvim"
 
   use "getomni/neovim"
