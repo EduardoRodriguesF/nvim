@@ -61,19 +61,25 @@ vim.keymap.set({"n","v"}, "<leader>ca", "<cmd>Lspsaga code_action<CR>")
 -- Rename all occurrences of the hovered word for the selected files
 vim.keymap.set("n", "gr", "<cmd>Lspsaga rename ++project<CR>")
 
+-- Go to definition
+vim.keymap.set("n", "gd", "<cmd>Lspsaga goto_definition<CR>")
+
 -- Peek definition
 -- You can edit the file containing the definition in the floating window
 -- It also supports open/vsplit/etc operations, do refer to "definition_action_keys"
 -- It also supports tagstack
 -- Use <C-t> to jump back
-vim.keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>")
+vim.keymap.set("n", "gpd", "<cmd>Lspsaga peek_definition<CR>")
+
+-- Go To Type Definition
+vim.keymap.set("n", "gt", "<cmd>Lspsaga goto_type_definition<CR>")
 
 -- Peek type definition
 -- You can edit the file containing the type definition in the floating window
 -- It also supports open/vsplit/etc operations, do refer to "definition_action_keys"
 -- It also supports tagstack
 -- Use <C-t> to jump back
-vim.keymap.set("n", "gt", "<cmd>Lspsaga peek_type_definition<CR>")
+vim.keymap.set("n", "gpt", "<cmd>Lspsaga peek_type_definition<CR>")
 
 -- Show line diagnostics
 -- You can pass argument ++unfocus to
