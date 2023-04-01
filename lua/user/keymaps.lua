@@ -32,6 +32,9 @@ keymap("n", "fh", ":Telescope help_tags<cr>", opts)
 keymap("n", "<c-n>", ":NvimTreeToggle<cr>", opts)
 keymap("n", "<leader>n", ":NvimTreeFocus<cr>", opts)
 
+-- Fugitive
+keymap("n", "<leader>gs", ":Git<cr>", opts)
+
 -- LSP
 keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
 keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
