@@ -35,6 +35,9 @@ keymap("n", "<leader>n", ":NvimTreeFocus<cr>", opts)
 -- Fugitive
 keymap("n", "<leader>gs", ":Git<cr>", opts)
 
+-- Undotree
+keymap("n", "<leader>u", ":UndotreeToggle<cr>", opts)
+
 -- LSP
 keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
 keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
