@@ -65,10 +65,6 @@ return packer.startup(function(use)
   -- Status line
   use "nvim-lualine/lualine.nvim"
 
-  -- A pretty list for showing diagnostics, references, telescope results,
-  -- quickfix and location lists to help you solve all the trouble your code is causing.
-  use "folke/trouble.nvim"
-
   -- Omni theme
   use "getomni/neovim"
 

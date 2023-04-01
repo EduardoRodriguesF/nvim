@@ -132,14 +132,6 @@ vim.keymap.set("n", "<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>")
 -- Floating terminal
 vim.keymap.set({"n", "t"}, "<A-d>", "<cmd>Lspsaga term_toggle<CR>")
 
--- Trouble
-keymap('n', '<leader>xx', '<Cmd>TroubleToggle<CR>', opts)
-keymap('n', '<leader>xw', '<Cmd>TroubleToggle workspace_diagnostics<CR>', opts)
-keymap('n', '<leader>xd', '<Cmd>TroubleToggle document_diagnostics<CR>', opts)
-keymap('n', '<leader>xl', '<Cmd>TroubleToggle loclist<CR>', opts)
-keymap('n', '<leader>xq', '<Cmd>TroubleToggle quickfix<CR>', opts)
-keymap('n', '<leader>gR', '<Cmd>TroubleToggle lsp_references<CR>', opts)
-
 -- Insert --
 -- Quickly exit mode
 keymap("i", "jk", "<esc>", opts)
