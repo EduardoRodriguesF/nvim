@@ -70,6 +70,10 @@ require("mason-lspconfig").setup_handlers {
   end
 }
 
+require('lspsaga').setup({
+  lightbulb = { enabled = false }
+})
+
 local null_ls = require("null-ls")
 null_ls.setup({
   sources = {
