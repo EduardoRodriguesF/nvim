@@ -79,7 +79,11 @@ return packer.startup(function(use)
     branch = "main",
     event = "LspAttach",
     config = function()
-      require("lspsaga").setup({})
+      require("lspsaga").setup({
+        lightbulb = {
+          enabled = false
+        }
+      })
     end,
     requires = {
       { "nvim-tree/nvim-web-devicons" },
