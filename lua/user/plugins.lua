@@ -15,8 +15,9 @@ return packer.startup(function(use)
 
   use "gpanders/editorconfig.nvim"
 
-  -- Autopairs
+  -- Pairing
   use "windwp/nvim-autopairs"
+  use "tpope/vim-surround"
 
   -- Indentation markers
   use "lukas-reineke/indent-blankline.nvim"
