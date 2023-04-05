@@ -18,14 +18,20 @@ require("mason-lspconfig").setup_handlers {
   -- a dedicated handler.
   function(server_name) -- default handler (optional)
     require("lspconfig")[server_name].setup {}
+  end,
+  ["eslint"] = function ()
+    local null_ls = require("null-ls")
+
+    -- Dedicated plugin for ESLint and Prettier diagnostics
+    null_ls.setup({
+      sources = {
+        null_ls.builtins.diagnostics.eslint,
+        null_ls.builtins.formatting.prettier
+      }
+    })
+
+    -- Default setup
+    require("lspconfig").eslint.setup {}
   end
 }
 
-local null_ls = require("null-ls")
-
-null_ls.setup({
-  sources = {
-    null_ls.builtins.diagnostics.eslint,
-    null_ls.builtins.formatting.prettier
-  }
-})
