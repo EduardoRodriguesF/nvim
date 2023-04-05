@@ -66,6 +66,9 @@ return packer.startup(function(use)
   -- Status line
   use "nvim-lualine/lualine.nvim"
 
+  -- Zen mode
+  use "folke/zen-mode.nvim"
+
   -- Omni theme
   use "getomni/neovim"
 
