@@ -1,26 +1,22 @@
-local options = {
-  backup = false,
-  hlsearch = true,
-  expandtab = true,
-  shiftwidth = 2,
-  tabstop = 2,
-  number = true,
-  relativenumber = true,
-  scrolloff = 8,
-  sidescrolloff = 8,
-  updatetime = 300,
-  fixendofline = true,
-  foldmethod = "expr",
-  foldexpr = "nvim_treesitter#foldexpr()",
-  foldenable = false,
-  cursorline = true,
-  wrap = false,
-  wildignore = "*.o,*.a,*.so,*.pyc,*.swp,.git,.git/*,*.class,*/target/*,.idea/*,.vscode/*,node_modules,node_modules/*"
-}
+local opt = vim.opt
 
-for key, value in pairs(options) do
-  vim.opt[key] = value
-end
+opt.backup = false
+opt.hlsearch = true
+opt.expandtab = true
+opt.shiftwidth = 2
+opt.tabstop = 2
+opt.number = true
+opt.relativenumber = true
+opt.scrolloff = 8
+opt.sidescrolloff = 8
+opt.updatetime = 300
+opt.fixendofline = true
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.foldenable = false
+opt.cursorline = true
+opt.wrap = false
+opt.wildignore = "*.o,*.a,*.so,*.pyc,*.swp,.git,.git/*,*.class,*/target/*,.idea/*,.vscode/*,node_modules,node_modules/*"
 
 vim.cmd[[colorscheme omni]]
 vim.cmd[[autocmd BufEnter * set fixendofline]]
