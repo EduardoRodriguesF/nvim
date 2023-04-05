@@ -16,6 +16,10 @@ keymap("n", "<c-j>", "<c-w>j", opts)
 keymap("n", "<c-k>", "<c-w>k", opts)
 keymap("n", "<c-l>", "<c-w>l", opts)
 
+-- Tabs
+keymap("n", "<A->>", ":tabnext<cr>", opts)
+keymap("n", "<A-<>", ":tabprevious<cr>", opts)
+
 -- Resize with arrows
 keymap("n", "<c-up>", ":resize -2<cr>", opts)
 keymap("n", "<c-down>", ":resize +2<cr>", opts)
