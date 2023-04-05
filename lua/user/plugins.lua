@@ -28,7 +28,7 @@ return packer.startup(function(use)
   use "lewis6991/gitsigns.nvim"
 
   -- Treesitter language parser
-  use "nvim-treesitter/nvim-treesitter"
+  use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
   -- Shows the context of the currently visible buffer contents
   use 'nvim-treesitter/nvim-treesitter-context'
 
