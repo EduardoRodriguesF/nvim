@@ -10,10 +10,6 @@ vim.keymap.set("n", "<c-j>", "<c-w>j", opts)
 vim.keymap.set("n", "<c-k>", "<c-w>k", opts)
 vim.keymap.set("n", "<c-l>", "<c-w>l", opts)
 
--- Tabs
-vim.keymap.set("n", "<A->>", ":tabnext<cr>", opts)
-vim.keymap.set("n", "<A-<>", ":tabprevious<cr>", opts)
-
 -- Resize with arrows
 vim.keymap.set("n", "<c-up>", ":resize -2<cr>", opts)
 vim.keymap.set("n", "<c-down>", ":resize +2<cr>", opts)

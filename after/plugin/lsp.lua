@@ -89,9 +89,6 @@ vim.keymap.set("n", "gd", "<cmd>Lspsaga goto_definition<CR>")
 -- Use <C-t> to jump back
 vim.keymap.set("n", "gpd", "<cmd>Lspsaga peek_definition<CR>")
 
--- Go To Type Definition
-vim.keymap.set("n", "gt", "<cmd>Lspsaga goto_type_definition<CR>")
-
 -- Peek type definition
 -- You can edit the file containing the type definition in the floating window
 -- It also supports open/vsplit/etc operations, do refer to "definition_action_keys"
