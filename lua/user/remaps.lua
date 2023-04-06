@@ -39,4 +39,6 @@ keymap("v", ">", ">gv", opts)
 -- Move text up and down
 keymap("v", "<a-j>", ":m .+1<cr>==", opts)
 keymap("v", "<a-k>", ":m .-2<cr>==", opts)
+
+-- Paste without losing register
 keymap("v", "p", '"_dP', opts)
