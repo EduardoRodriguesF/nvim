@@ -1,8 +1,11 @@
 local opt = vim.opt
 
 opt.guicursor = ""
+
+opt.hlsearch = false
+opt.incsearch = true
+
 opt.backup = false
-opt.hlsearch = true
 opt.expandtab = true
 opt.shiftwidth = 2
 opt.tabstop = 2
