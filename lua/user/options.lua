@@ -17,6 +17,3 @@ opt.foldenable = false
 opt.cursorline = true
 opt.wrap = false
 opt.wildignore = "*.o,*.a,*.so,*.pyc,*.swp,.git,.git/*,*.class,*/target/*,.idea/*,.vscode/*,node_modules,node_modules/*"
-
-vim.cmd[[colorscheme omni]]
-vim.cmd[[autocmd BufEnter * set fixendofline]]
