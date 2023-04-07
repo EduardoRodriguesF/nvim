@@ -1,5 +1,6 @@
 local opt = vim.opt
 
+opt.guicursor = ""
 opt.backup = false
 opt.hlsearch = true
 opt.expandtab = true
