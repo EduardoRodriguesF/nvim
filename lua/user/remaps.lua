@@ -1,7 +1,7 @@
 local opts = { noremap = true, silent = true }
 
-vim.g.mapleader = "<space>"
-vim.g.maplocalleader = "<space>"
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- Normal --
 -- Better window navigation
