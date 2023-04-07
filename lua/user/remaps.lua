@@ -16,19 +16,6 @@ vim.keymap.set("n", "<c-down>", ":resize +2<cr>", opts)
 vim.keymap.set("n", "<c-left>", ":vertical resize -2<cr>", opts)
 vim.keymap.set("n", "<c-right>", ":vertical resize +2<cr>", opts)
 
--- Insert --
--- Quickly exit mode
-vim.keymap.set("i", "jk", "<esc>", opts)
-vim.keymap.set("i", "kj", "<esc>", opts)
-
 -- Visual --
--- Stay in indent mode
-vim.keymap.set("v", "<", "<gv", opts)
-vim.keymap.set("v", ">", ">gv", opts)
-
--- Move text up and down
-vim.keymap.set("v", "<a-j>", ":m .+1<cr>==", opts)
-vim.keymap.set("v", "<a-k>", ":m .-2<cr>==", opts)
-
 -- Paste without losing register
 vim.keymap.set("v", "p", '"_dP', opts)
