@@ -22,7 +22,7 @@ opt.wrap = false
 opt.scrolloff = 8
 opt.sidescrolloff = 8
 
-opt.updatetime = 300
+opt.updatetime = 150
 
 opt.fixendofline = true
 
