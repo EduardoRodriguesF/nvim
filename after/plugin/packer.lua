@@ -9,7 +9,6 @@ return require("packer").startup(function(use)
 
   use "nvim-lua/popup.nvim"
   use "kyazdani42/nvim-web-devicons"
-  use "L3MON4D3/LuaSnip"
 
   use "gpanders/editorconfig.nvim"
 
@@ -30,26 +29,10 @@ return require("packer").startup(function(use)
   -- Shows the context of the currently visible buffer contents
   use 'nvim-treesitter/nvim-treesitter-context'
 
-  -- LSP tooling manager
-  use 'williamboman/mason.nvim'
-
   -- Inject diagnostics
-  use "jose-elias-alvarez/null-ls.nvim"
 
   -- Syntax highlight and filetype detection for RON
   use 'ron-rs/ron.vim'
-
-  -- LSP
-  use 'neovim/nvim-lspconfig'
-  use 'williamboman/mason-lspconfig.nvim'
-
-  -- Completions
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-path'
-  use 'hrsh7th/cmp-cmdline'
-  use 'hrsh7th/nvim-cmp'
-  use 'saadparwaiz1/cmp_luasnip'
 
   -- Undo history tree
   use 'mbbill/undotree'
@@ -70,23 +53,26 @@ return require("packer").startup(function(use)
   -- Omni theme
   use "getomni/neovim"
 
-  -- LSP enhanced
-  use({
-    "glepnir/lspsaga.nvim",
-    opt = true,
-    branch = "main",
-    event = "LspAttach",
-    config = function()
-      require("lspsaga").setup({
-        lightbulb = {
-          enabled = false
-        }
-      })
-    end,
+  -- LSP
+  use {
+    'VonHeikemen/lsp-zero.nvim',
+    branch = 'v2.x',
     requires = {
-      { "nvim-tree/nvim-web-devicons" },
-      --Please make sure you install markdown and markdown_inline parser
-      { "nvim-treesitter/nvim-treesitter" }
+      -- LSP Support
+      { 'neovim/nvim-lspconfig' }, -- Required
+      {
+        'williamboman/mason.nvim',
+        run = function()
+          pcall(vim.cmd, 'MasonUpdate')
+        end,
+      },
+      { 'williamboman/mason-lspconfig.nvim' },
+      { 'jose-elias-alvarez/null-ls.nvim' }, -- For ESLint
+
+      -- Autocompletion
+      { 'hrsh7th/nvim-cmp' },
+      { 'hrsh7th/cmp-nvim-lsp' },
+      { 'L3MON4D3/LuaSnip' },
     }
-  })
+  }
 end)
