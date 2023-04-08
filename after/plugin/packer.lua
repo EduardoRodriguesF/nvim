@@ -29,7 +29,7 @@ return require("packer").startup(function(use)
   -- Shows the context of the currently visible buffer contents
   use 'nvim-treesitter/nvim-treesitter-context'
 
-  -- Inject diagnostics
+  use "ThePrimeagen/harpoon"
 
   -- Syntax highlight and filetype detection for RON
   use 'ron-rs/ron.vim'
