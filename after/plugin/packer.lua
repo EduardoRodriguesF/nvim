@@ -50,6 +50,9 @@ return require("packer").startup(function(use)
   -- Zen mode
   use "folke/zen-mode.nvim"
 
+  -- Floating terminal
+  use "numToStr/FTerm.nvim"
+
   -- Omni theme
   use "getomni/neovim"
 
