@@ -24,7 +24,7 @@ opt.sidescrolloff = 8
 
 opt.updatetime = 150
 
-opt.fixendofline = true
+opt.fixendofline = false
 
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
