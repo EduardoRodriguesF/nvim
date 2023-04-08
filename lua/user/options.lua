@@ -7,6 +7,7 @@ opt.mouse = "c"
 opt.hlsearch = false
 opt.incsearch = true
 
+opt.swapfile = false
 opt.backup = false
 
 opt.expandtab = true
