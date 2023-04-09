@@ -15,7 +15,7 @@ vim.diagnostic.config({
 
 -- don't initialize this language server
 -- we will use rust-tools to setup rust_analyzer
-lsp.skip_server_setup({'rust_analyzer'})
+lsp.skip_server_setup({ 'rust_analyzer' })
 
 lsp.setup_servers({
   'eslint',
@@ -30,6 +30,7 @@ lsp.on_attach(function(client, bufnr)
   lsp.default_keymaps(opts)
 
   vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, opts)
+  vim.keymap.set("n", "<C-Space>", vim.lsp.buf.code_action, opts)
 end)
 
 lsp.configure('eslint', {
