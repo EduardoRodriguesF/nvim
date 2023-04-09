@@ -22,3 +22,11 @@ vim.keymap.set("x", "p", '"_dP', opts)
 vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>y", "\"+y")
 vim.keymap.set("n", "<leader>Y", "\"+Y")
+
+-- Quickfix list
+vim.keymap.set("n", "<leader>q", vim.cmd.copen)
+vim.keymap.set("n", "<leader>Q", vim.cmd.cclose)
+
+-- Location list
+vim.keymap.set("n", "<leader>l", vim.cmd.lopen)
+vim.keymap.set("n", "<leader>L", vim.cmd.lclose)
