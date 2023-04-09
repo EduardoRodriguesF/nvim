@@ -13,6 +13,15 @@ vim.diagnostic.config({
   virtual_text = false
 })
 
+lsp.setup_servers({
+  'eslint',
+  'tsserver',
+  'rust_analyzer',
+  opts = {
+    single_file_support = false,
+  }
+})
+
 lsp.on_attach(function(client, bufnr)
   local opts = { buffer = bufnr }
   lsp.default_keymaps(opts)
