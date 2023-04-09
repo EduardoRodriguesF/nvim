@@ -20,24 +20,8 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, opts)
 end)
 
-lsp.configure('lua_ls', {
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals = { "vim" }
-      }
-    }
-  }
-})
-
-require("mason-lspconfig").setup_handlers {
-  -- The first entry (without a key) will be the default handler
-  -- and will be called for each installed server that doesn't have
-  -- a dedicated handler.
-  function(server_name) -- default handler (optional)
-    require("lspconfig")[server_name].setup {}
-  end,
-  ["eslint"] = function()
+lsp.configure('eslint', {
+  on_attach = function ()
     local null_ls = require("null-ls")
 
     -- Dedicated plugin for ESLint and Prettier diagnostics
@@ -47,11 +31,11 @@ require("mason-lspconfig").setup_handlers {
         null_ls.builtins.formatting.prettier
       }
     })
+  end
+})
 
-    -- Default setup
-    require("lspconfig").eslint.setup {}
-  end,
-  ["omnisharp"] = function()
+lsp.configure('omnisharp', {
+  on_attach = function ()
     -- Manually fetch binary for omnisharp server.
     local omnisharp_bin = "/home/edurf/.local/share/nvim/lsp_servers/omnisharp/omnisharp/OmniSharp"
     local root_pattern = require('lspconfig.util').root_pattern
@@ -63,6 +47,21 @@ require("mason-lspconfig").setup_handlers {
       end
     })
   end
-}
+})
+
+-- Fix undefined vim
+lsp.configure('lua_ls', {
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { "vim" }
+      }
+    }
+  }
+})
+
+-- configure lua language server for neovim
+-- see :help lsp-zero.nvim_workspace()
+lsp.nvim_workspace()
 
 lsp.setup()
