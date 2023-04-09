@@ -4,4 +4,5 @@ Please use Neovim 0.8.3 to ensure everything works properly. Check [issue #1](ht
 
 ## Dependencies 
 
-- [BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep)
+- [Packer](https://github.com/wbthomason/packer.nvim) for plugin management.
+- [ripgrep](https://github.com/BurntSushi/ripgrep) for fuzzy finder.
