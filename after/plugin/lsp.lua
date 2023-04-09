@@ -89,3 +89,9 @@ local rust_lsp = lsp.build_options('rust_analyzer', {
 })
 
 require('rust-tools').setup({ server = rust_lsp })
+
+-- Hide all semantic highlights
+-- This fixes the weird highlight issues after updating to 0.9
+for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
+	vim.api.nvim_set_hl(0, group, {})
+end
