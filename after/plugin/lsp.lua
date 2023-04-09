@@ -13,10 +13,13 @@ vim.diagnostic.config({
   virtual_text = false
 })
 
+-- don't initialize this language server
+-- we will use rust-tools to setup rust_analyzer
+lsp.skip_server_setup({'rust_analyzer'})
+
 lsp.setup_servers({
   'eslint',
   'tsserver',
-  'rust_analyzer',
   opts = {
     single_file_support = false,
   }
@@ -30,7 +33,7 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.configure('eslint', {
-  on_attach = function ()
+  on_attach = function()
     local null_ls = require("null-ls")
 
     -- Dedicated plugin for ESLint and Prettier diagnostics
@@ -44,7 +47,7 @@ lsp.configure('eslint', {
 })
 
 lsp.configure('omnisharp', {
-  on_attach = function ()
+  on_attach = function()
     -- Manually fetch binary for omnisharp server.
     local omnisharp_bin = "/home/edurf/.local/share/nvim/lsp_servers/omnisharp/omnisharp/OmniSharp"
     local root_pattern = require('lspconfig.util').root_pattern
@@ -58,6 +61,8 @@ lsp.configure('omnisharp', {
   end
 })
 
+
+
 -- Fix undefined vim
 lsp.configure('lua_ls', {
   settings = {
@@ -69,8 +74,14 @@ lsp.configure('lua_ls', {
   }
 })
 
--- configure lua language server for neovim
--- see :help lsp-zero.nvim_workspace()
+-- Configure lua language server for neovim
 lsp.nvim_workspace()
 
 lsp.setup()
+
+-- Initialize rust_analyzer with rust-tools
+local rust_lsp = lsp.build_options('rust_analyzer', {
+  single_file_support = false,
+})
+
+require('rust-tools').setup({ server = rust_lsp })
