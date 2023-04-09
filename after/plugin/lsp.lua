@@ -29,8 +29,11 @@ lsp.on_attach(function(client, bufnr)
   local opts = { buffer = bufnr }
   lsp.default_keymaps(opts)
 
-  vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, opts)
   vim.keymap.set("n", "<C-Space>", vim.lsp.buf.code_action, opts)
+
+  vim.keymap.set('n', '<leader>f', function()
+      vim.lsp.buf.format { async = true }
+    end, opts)
 end)
 
 lsp.configure('eslint', {
