@@ -20,6 +20,16 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, opts)
 end)
 
+lsp.configure('lua_ls', {
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { "vim" }
+      }
+    }
+  }
+})
+
 require("mason-lspconfig").setup_handlers {
   -- The first entry (without a key) will be the default handler
   -- and will be called for each installed server that doesn't have
