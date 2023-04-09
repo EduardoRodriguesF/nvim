@@ -1,3 +1,3 @@
 source $HOME/.vimrc
 
-source lua/user/init.lua
+source $HOME/.config/nvim/lua/user/init.lua
