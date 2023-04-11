@@ -33,7 +33,7 @@ lsp.setup_servers({
   }
 })
 
-lsp.on_attach(function(client, bufnr)
+lsp.on_attach(function(_, bufnr)
   local opts = { buffer = bufnr }
   lsp.default_keymaps(opts)
 
