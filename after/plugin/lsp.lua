@@ -1,6 +1,14 @@
 local lsp = require("lsp-zero")
+local cmp = require('cmp')
 
 lsp.preset("recommended")
+
+cmp.setup({
+  mapping = {
+    -- Trigger completion menu
+    ['<C-Space>'] = cmp.mapping.complete(),
+  }
+})
 
 lsp.set_sign_icons({
   error = '✘',
