@@ -10,8 +10,6 @@ return require("packer").startup(function(use)
   use "nvim-lua/popup.nvim"
   use "kyazdani42/nvim-web-devicons"
 
-  use "gpanders/editorconfig.nvim"
-
   -- Pairing
   use "windwp/nvim-autopairs"
   use "tpope/vim-surround"
