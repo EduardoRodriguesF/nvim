@@ -4,15 +4,11 @@ return require("packer").startup(function(use)
 
   use "nvim-lua/plenary.nvim"
 
-  -- Debugger
-  use 'mfussenegger/nvim-dap'
-
   use "nvim-lua/popup.nvim"
   use "kyazdani42/nvim-web-devicons"
 
   -- Pairing
   use "windwp/nvim-autopairs"
-  use "tpope/vim-surround"
 
   -- Indentation markers
   use "lukas-reineke/indent-blankline.nvim"
@@ -44,12 +40,6 @@ return require("packer").startup(function(use)
 
   -- Status line
   use "nvim-lualine/lualine.nvim"
-
-  -- Zen mode
-  use "folke/zen-mode.nvim"
-
-  -- Floating terminal
-  use "numToStr/FTerm.nvim"
 
   -- Omni theme
   use "getomni/neovim"
