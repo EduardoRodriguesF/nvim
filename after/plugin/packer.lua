@@ -33,7 +33,7 @@ return require("packer").startup(function(use)
   use "nvim-lualine/lualine.nvim"
 
   -- Omni theme
-  use "getomni/neovim"
+  use { "getomni/neovim", as = "omni" }
 
   -- LSP
   use {
