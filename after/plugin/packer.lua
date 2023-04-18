@@ -22,9 +22,6 @@ return require("packer").startup(function(use)
 
   use "ThePrimeagen/harpoon"
 
-  -- Syntax highlight and filetype detection for RON
-  use 'ron-rs/ron.vim'
-
   -- Undo history tree
   use 'mbbill/undotree'
 
