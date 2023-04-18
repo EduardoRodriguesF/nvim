@@ -32,9 +32,6 @@ return require("packer").startup(function(use)
   use { "nvim-telescope/telescope.nvim", tag = '0.1.x' }
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
-  -- File tree
-  use "kyazdani42/nvim-tree.lua"
-
   -- Status line
   use "nvim-lualine/lualine.nvim"
 
