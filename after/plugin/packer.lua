@@ -51,6 +51,7 @@ return require("packer").startup(function(use)
       { 'williamboman/mason-lspconfig.nvim' },
       { 'jose-elias-alvarez/null-ls.nvim' }, -- For ESLint
       { 'simrat39/rust-tools.nvim' }, -- For Rust
+	  { 'simrat39/symbols-outline.nvim' },
 
       -- Autocompletion
       { 'hrsh7th/nvim-cmp' },

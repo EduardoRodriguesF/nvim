@@ -1,5 +1,6 @@
 local lsp = require("lsp-zero")
 local cmp = require('cmp')
+local symbols_outline = require('symbols-outline')
 
 lsp.preset("recommended")
 
@@ -9,6 +10,8 @@ cmp.setup({
     ['<C-Space>'] = cmp.mapping.complete(),
   }
 })
+
+symbols_outline.setup()
 
 lsp.set_sign_icons({
   error = '',
@@ -38,6 +41,7 @@ lsp.on_attach(function(_, bufnr)
   lsp.default_keymaps(opts)
 
   vim.keymap.set("n", "<C-Space>", vim.lsp.buf.code_action, opts)
+  vim.keymap.set("n", "<leader>o", vim.cmd.SymbolsOutline, opts)
 
   vim.keymap.set('n', '<leader>f', function()
       vim.lsp.buf.format { async = true }
