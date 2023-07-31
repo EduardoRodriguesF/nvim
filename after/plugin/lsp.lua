@@ -40,7 +40,6 @@ lsp.on_attach(function(_, bufnr)
   local opts = { buffer = bufnr }
   lsp.default_keymaps(opts)
 
-  vim.keymap.set('n', '<C-Space>', vim.lsp.buf.code_action, opts)
   vim.keymap.set('n', '<leader>o', vim.cmd.SymbolsOutline, opts)
 
   vim.keymap.set('n', '<leader>f', function()
