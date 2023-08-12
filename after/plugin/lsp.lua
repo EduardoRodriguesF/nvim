@@ -77,6 +77,20 @@ lsp.configure('omnisharp', {
   end,
 })
 
+lsp.configure('gopls', {
+  on_attach = function()
+    -- Automatically organize imports
+    vim.api.nvim_create_autocmd('BufWritePre', {
+      pattern = '*.go',
+      callback = function()
+        vim.lsp.buf.code_action({ context = { only = { 'source.organizeImports' } }, apply = true })
+      end
+    })
+
+    require('lspconfig').gopls.setup()
+  end,
+})
+
 -- Fix undefined vim
 lsp.configure('lua_ls', {
   settings = {
