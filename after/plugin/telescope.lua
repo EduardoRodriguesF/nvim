@@ -7,8 +7,12 @@ require('telescope').setup {
 }
 
 vim.keymap.set('n', '<leader>pf', builtin.find_files, {}) -- Project files
-vim.keymap.set('n', '<C-p>', builtin.git_files, {}) -- Git files
+vim.keymap.set('n', '<C-p>', function()
+  local success = pcall(builtin.git_files, {})
 
-vim.keymap.set('n', '<leader>ps', function()
-  builtin.grep_string { search = vim.fn.input 'Grep > ' }
-end)
+  if not success then
+    builtin.find_files({})
+  end
+end) -- Git files
+
+vim.keymap.set("n", "<leader>ps", builtin.live_grep, {})
