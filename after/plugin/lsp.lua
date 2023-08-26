@@ -31,6 +31,8 @@ lsp.skip_server_setup { 'rust_analyzer' }
 lsp.setup_servers {
   'eslint',
   'tsserver',
+  'clangd',
+  'gopls',
   opts = {
     single_file_support = false,
   },
