@@ -7,9 +7,6 @@ return require('packer').startup(function(use)
   use 'nvim-lua/popup.nvim'
   use 'kyazdani42/nvim-web-devicons'
 
-  -- Indentation markers
-  use 'lukas-reineke/indent-blankline.nvim'
-
   -- Git wrapper
   use 'tpope/vim-fugitive'
   -- Git changes on sign column
