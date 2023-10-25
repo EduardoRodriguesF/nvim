@@ -22,6 +22,9 @@ return require('packer').startup(function(use)
   -- Undo history tree
   use 'mbbill/undotree'
 
+  -- Debugger
+  use 'mfussenegger/nvim-dap'
+
   -- Fuzzy finder
   use { 'nvim-telescope/telescope.nvim', tag = '0.1.x' }
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
