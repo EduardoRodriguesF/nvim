@@ -1,6 +1,7 @@
 local lsp = require 'lsp-zero'
 local cmp = require 'cmp'
 local symbols_outline = require 'symbols-outline'
+local util = require 'lspconfig.util'
 
 lsp.preset 'recommended'
 
@@ -49,7 +50,7 @@ lsp.setup_servers {
   },
 }
 
-lsp.on_attach(function(_, bufnr)
+lsp.on_attach(function(client, bufnr)
   local opts = { buffer = bufnr }
   lsp.default_keymaps(opts)
 
@@ -58,6 +59,13 @@ lsp.on_attach(function(_, bufnr)
   vim.keymap.set('n', '<leader>f', function()
     vim.lsp.buf.format { async = true }
   end, opts)
+
+  if util.root_pattern("deno.json", "import_map.json")(vim.fn.getcwd()) then
+    if client.name == "tsserver" then
+      client.stop()
+      return
+    end
+  end
 end)
 
 lsp.configure('eslint', {
@@ -74,17 +82,20 @@ lsp.configure('eslint', {
   end,
 })
 
+lsp.configure('denols', {
+  util.root_pattern("deno.json", "deno.jsonc")
+})
+
 lsp.configure('omnisharp', {
   on_attach = function()
     -- Manually fetch binary for omnisharp server.
     local omnisharp_bin =
-      '/home/edurf/.local/share/nvim/lsp_servers/omnisharp/omnisharp/OmniSharp'
-    local root_pattern = require('lspconfig.util').root_pattern
+    '/home/edurf/.local/share/nvim/lsp_servers/omnisharp/omnisharp/OmniSharp'
 
     require('lspconfig').omnisharp.setup {
       cmd = { 'dotnet', omnisharp_bin },
       root_dir = function(path)
-        return root_pattern '*.sln'(path) or root_pattern '*.csproj'(path)
+        return util.root_pattern '*.sln' (path) or util.root_pattern '*.csproj' (path)
       end,
     }
   end,
@@ -109,7 +120,7 @@ lsp.configure('clangd', {
     vim.keymap.set('n', '<leader>h', vim.cmd.ClangdSwitchSourceHeader, {})
 
     require('lspconfig').clangd.setup({
-      cmd = {"clangd", "--background-index"},
+      cmd = { "clangd", "--background-index" },
     })
   end,
 })
