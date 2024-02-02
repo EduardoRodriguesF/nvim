@@ -17,7 +17,11 @@ return require('packer').startup(function(use)
   -- Shows the context of the currently visible buffer contents
   use 'nvim-treesitter/nvim-treesitter-context'
 
-  use 'ThePrimeagen/harpoon'
+  use {
+    'ThePrimeagen/harpoon',
+    branch = "harpoon2",
+    requires = { {"nvim-lua/plenary.nvim"} }
+  }
 
   -- Undo history tree
   use 'mbbill/undotree'
