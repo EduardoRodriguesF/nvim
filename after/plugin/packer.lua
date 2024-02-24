@@ -12,6 +12,8 @@ return require('packer').startup(function(use)
   -- Git changes on sign column
   use 'lewis6991/gitsigns.nvim'
 
+  use 'github/copilot.vim'
+
   -- Treesitter language parser
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   -- Shows the context of the currently visible buffer contents
