@@ -42,7 +42,7 @@ lsp.skip_server_setup { 'rust_analyzer' }
 
 lsp.setup_servers {
   'eslint',
-  'tsserver',
+  'ts_ls',
   'clangd',
   'gopls',
   opts = {
@@ -61,7 +61,7 @@ lsp.on_attach(function(client, bufnr)
   end, opts)
 
   if util.root_pattern("deno.json", "import_map.json")(vim.fn.getcwd()) then
-    if client.name == "tsserver" then
+    if client.name == "ts_ls" then
       client.stop()
       return
     end
